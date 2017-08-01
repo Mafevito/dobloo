@@ -1,0 +1,37 @@
+<h1> Authentication Sample </h1>
+<form>
+  <h2> Signup </h2>
+  <label> Username </label><br>
+  <input type="text" [(ngModel)]="username" name="username"/>
+  <br>
+  <label> Password </label><br>
+  <input type="password" [(ngModel)]="password" name="password"/>
+  <br>
+  <label> Email </label><br>
+  <input type="text" [(ngModel)]="email" name="email"/>
+  <br>
+  <label> Nombre completo </label><br>
+  <input type="text" [(ngModel)]="fullName" name="fullName"/>
+  <br>
+  <label> Tipo de sangre </label><br>
+  <input type="text" [(ngModel)]="bloodType" name="bloodType"/>
+  <br>
+  <label> Fecha de nacimiento </label><br>
+  <input type="text" [(ngModel)]="birthDate" name="birthDate"/>
+  <br>
+  <label> Ciudad </label><br>
+  <input type="text" [(ngModel)]="city" name="city"/>
+  <br>
+  <label> Peso </label><br>
+  <input type="text" [(ngModel)]="weight" name="weight"/>
+  <br>
+  <label> Altura </label><br>
+  <input type="text" [(ngModel)]="height" name="height"/>
+  <br>
+  <label> Numero de telefono </label><br>
+  <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber"/>
+  <br>
+
+  <button (click)="signup()"> signup </button>
+</form>
+<p class="error"> {{ error }} </p>
