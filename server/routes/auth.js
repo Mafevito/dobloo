@@ -12,10 +12,10 @@ function returnMessage(message){
 }
 authRoutes.get('/signup',returnMessage("This should be a POST"));
 authRoutes.post('/signup', (req, res, next) => {
-
+  console.log(req.body);
   const { username, email, password, fullName, bloodType, birthDate, city, weight, height, phoneNumber } = req.body;
 
-  if (!username || !password || !email || !fullName) {
+  if (!username || !password) {
     res.status(400).json({
       message: 'Provide username and password'
     });

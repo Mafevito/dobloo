@@ -21,16 +21,8 @@ export class SignupFormComponent implements OnInit {
   height:string;
   phoneNumber:number;
 
-  constructor(private session: SessionService) { }
+  constructor(private session: SessionService, private router: Router) { }
   ngOnInit() {
-  }
-
-  login() {
-    this.session.login(this.username,this.password)
-      .subscribe(
-        (user) => console.log(user),
-        (err) => this.error = err
-      );
   }
 
   signup() {

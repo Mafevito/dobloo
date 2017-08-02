@@ -12,7 +12,8 @@ export class LoginFormComponent implements OnInit {
   error: string;
   username:string;
   password:string;
-  constructor(private session: SessionService) { }
+  
+  constructor(private session: SessionService, private router: Router) { }
   ngOnInit() {
   }
 
@@ -22,6 +23,7 @@ export class LoginFormComponent implements OnInit {
         (user) => console.log(user),
         (err) => this.error = err
       );
+      this.router.navigate(['home'])
   }
 
  }

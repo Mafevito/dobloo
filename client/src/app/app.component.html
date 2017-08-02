@@ -1,5 +1,12 @@
+<h1> Welcome to {{title}}! </h1>
+  <div *ngIf="!session.user && session.startLoginCompleted">
+    <a  [routerLink]="['login']">Login</a>
+    <a  [routerLink]="['signup']">Signup</a>
+  </div>
 
-   <a  [routerLink]="['login']">Login</a>
-   <a  [routerLink]="['signup']">Signup</a>
+  <div *ngIf="session.user && session.startLoginCompleted">
+    <pre>{{ session.user | json }}</pre>
+    <button (click)="logout()">Logout</button>
+  </div>
 
 <router-outlet></router-outlet>

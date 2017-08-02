@@ -9,12 +9,18 @@ import { SessionService } from '../services/session.service';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { HomeComponent } from './home/home.component';
+import { SearchComponent } from './search/search.component';
+import { SolicitudComponent } from './solicitud/solicitud.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    HomeComponent,
+    SearchComponent,
+    SolicitudComponent
   ],
   imports: [
     BrowserModule,
