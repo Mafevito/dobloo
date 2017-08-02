@@ -6,6 +6,7 @@ import { routes } from './routes';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { SessionService } from '../services/session.service';
+import { SolicitudService } from '../services/solicitud.service';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -28,7 +29,7 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService],
+  providers: [SessionService, SolicitudService ],
   bootstrap: [AppComponent]
 })
 

@@ -14,6 +14,5 @@ const solicitudSchema = new Schema({
   }
 });
 
-const userSolicitud = mongoose.model('userSolicitud', solicitudSchema);
-
-module.exports = userSolicitud;
+const NewSolicitud = mongoose.model('NewSolicitud', solicitudSchema);
+module.exports = NewSolicitud;

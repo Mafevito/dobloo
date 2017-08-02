@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment'
 import { SessionService } from '../../services/session.service';
 
 @Component({
@@ -22,8 +23,7 @@ export class SignupFormComponent implements OnInit {
   phoneNumber:number;
 
   constructor(private session: SessionService, private router: Router) { }
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   signup() {
     this.session.signup(this.username, this.password, this.email, this.fullName, this.bloodType, this.birthDate, this.city, this.weight, this.height, this.phoneNumber)
@@ -31,6 +31,5 @@ export class SignupFormComponent implements OnInit {
         (user) => console.log(user),
         (err) => this.error = err
       );
-  }
-
+   }
   }

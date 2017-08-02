@@ -1,14 +1,14 @@
 require('dotenv').config();
-const express      = require('express');
-const path         = require('path');
-const favicon      = require('serve-favicon');
-const logger       = require('morgan');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser   = require('body-parser');
-const layouts      = require('express-ejs-layouts');
-const mongoose     = require('mongoose');
-const session    = require('express-session');
-const passport   = require('passport');
+const bodyParser = require('body-parser');
+const layouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
 const cors = require("cors");
 
 const dbUrl = process.env.MONGO_URL;

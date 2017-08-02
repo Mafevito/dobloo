@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { SessionService } from '../services/session.service';
+import { SolicitudService } from '../services/solicitud.service';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
