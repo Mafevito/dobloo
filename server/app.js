@@ -1,24 +1,25 @@
 require('dotenv').config();
-const express = require('express');
-const path = require('path');
+// const express = require('express');
+// const path = require('path');
 const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const layouts = require('express-ejs-layouts');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const passport = require('passport');
+// const logger = require('morgan');
+// const cookieParser = require('cookie-parser');
+// const bodyParser = require('body-parser');
+// const layouts = require('express-ejs-layouts');
+// const mongoose = require('mongoose');
+// const session = require('express-session');
+// const passport = require('passport');
 const cors = require("cors");
 
-const dbUrl = process.env.MONGO_URL;
-console.time('db');
-mongoose.connect(dbUrl)
-  .then( () => {
-    console.log(`Connected to ${dbUrl}`);
-    console.timeEnd('db');
-  })
-  .catch( e => console.log(e));
+//Pasado a config
+// const dbUrl = process.env.MONGO_URL;
+// console.time('db');
+// mongoose.connect(dbUrl)
+//   .then( () => {
+//     console.log(`Connected to ${dbUrl}`);
+//     console.timeEnd('db');
+//   })
+//   .catch( e => console.log(e));
 
 const app = express();
 
@@ -32,29 +33,31 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+//Pasado a config
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'ejs');
 
-app.locals.title = 'Express - Generated with IronGenerator';
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(layouts);
+//Pasado a config
+// app.locals.title = 'Express - Generated with IronGenerator';
+// app.use(logger('dev'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, 'public')));
+// app.use(layouts);
 
-app.use(session({
-  secret: 'angular auth passport secret shh',
-  resave: true,
-  saveUninitialized: true,
-  cookie : { httpOnly: true, maxAge: 2419200000 }
-}));
+// app.use(session({
+//   secret: 'angular auth passport secret shh',
+//   resave: true,
+//   saveUninitialized: true,
+//   cookie : { httpOnly: true, maxAge: 2419200000 }
+// }));
 
 const passportLocalStrategy = require('./passport/local');
 passportLocalStrategy(passport);
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 const authRoutes = require('./routes/auth');
 const socilitudRoutes = require('./routes/solicitud');
@@ -65,7 +68,8 @@ app.use((req, res, next) => {
   res.sendfile(__dirname + '/public/index.html');
 });
 
-app.use((req, res, next) => {
+//Pasado a config-----
+/*app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -76,6 +80,6 @@ app.use((err, req, res, next) => {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   res.status(err.status || 500);
   res.render('error');
-});
+});*/
 
 module.exports = app;
