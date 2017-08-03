@@ -6,6 +6,7 @@ const NewSolicitud = require('../models/NewSolicitud');
 function returnMessage(message){
   return (req,res,next) => res.status(500).json({error:true, message:message});
 }
+
 router.get('/', returnMessage("This should be a POST"));
 router.post('/', (req, res, next) => {
 
@@ -19,7 +20,7 @@ router.post('/', (req, res, next) => {
   }
   console.log(req.body);
   //res.json('holi');
-  // res.json(req.body);
+  //res.json(req.body);
   const newSolicitud = new NewSolicitud ({
     name: req.body.name,
     bloodType: req.body.bloodType,
