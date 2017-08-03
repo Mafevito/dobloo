@@ -6,13 +6,12 @@ import { routes } from './routes';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { SessionService } from '../services/session.service';
-import { SolicitudService } from '../services/solicitud.service';
+import { SolicitudeService } from '../services/solicitude.service';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HomeComponent } from './home/home.component';
-import { SearchComponent } from './search/search.component';
-import { SolicitudComponent } from './solicitud/solicitud.component';
+import { SolicitudeComponent } from './solicitude/solicitude.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
     LoginFormComponent,
     SignupFormComponent,
     HomeComponent,
-    SearchComponent,
-    SolicitudComponent
+    SolicitudeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +27,7 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, SolicitudService ],
+  providers: [SessionService, SolicitudeService ],
   bootstrap: [AppComponent]
 })
 

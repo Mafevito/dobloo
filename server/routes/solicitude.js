@@ -1,13 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-const NewSolicitud = require('../models/NewSolicitud');
+const Solicitude = require('../models/Solicitude');
 
 function returnMessage(message){
   return (req,res,next) => res.status(500).json({error:true, message:message});
 }
 
-router.get('/', returnMessage("This should be a POST"));
+router.get('/', (req, res) => {
+  Solicitude.find().then( (solicitude) => {
+    res.json(solicitude);
+  });
+});
+
 router.post('/', (req, res, next) => {
 
   const { name, bloodType, birthDate, amountBlood, reason} = req.body;
@@ -21,23 +26,28 @@ router.post('/', (req, res, next) => {
   console.log(req.body);
   //res.json('holi');
   //res.json(req.body);
-  const newSolicitud = new NewSolicitud ({
+  const solicitude = new Solicitude ({
     name: req.body.name,
     bloodType: req.body.bloodType,
     amountBlood: req.body.amountBlood,
     reason: req.body.reason,
   });
 
-  console.log(newSolicitud);
+  console.log(solicitude);
 
-  newSolicitud.save()
-  .then(solicitud => {
-    console.log('New solicitud created!');
+  solicitude.save()
+  .then(solicitude => {
+    console.log('New solicitude created!');
     res.status(200).json({
-      message: 'New solicitud has been created!',
+      message: 'New solicitude has been created!',
     });
   })
   .catch(e => res.status(500).json(e));
-});
+
+  solicitude.find({}).then(solicitudes => {
+    res.json(solicitudes);
+  })
+  .catch(e => res.status(500).json(e));
+  });
 
 module.exports = router;

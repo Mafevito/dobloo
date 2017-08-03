@@ -5,15 +5,15 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 import { environment } from '../environments/environment';
 
-export interface Solicitud {
+export interface Solicitude {
   name:string,
   updated_at:Date,
   created_at:Date
 }
 
 @Injectable()
-export class SolicitudService {
-  BASE_URL:string=`${environment.BASE_URL}/api/solicitud`;
+export class SolicitudeService {
+  BASE_URL:string=`${environment.BASE_URL}/api/solicitude`;
   options:object = {withCredentials:true};
 
   constructor(private http:Http) { }
@@ -23,7 +23,7 @@ export class SolicitudService {
     return Observable.throw(e.json().message);
   }
 
-  newSolicitud(name:string, bloodType:string, birthDate:string, amountBlood:string, reason:string):Observable<Solicitud> {
+  newSolicitude(name:string, bloodType:string, birthDate:string, amountBlood:string, reason:string):Observable<Solicitude> {
     return this.http.post(`${this.BASE_URL}`, {name,bloodType,birthDate,amountBlood, reason}, this.options)
     .map(res => res.json())
     .catch(this.handleError);

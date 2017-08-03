@@ -9,9 +9,9 @@ require('./config/express')(app);
 require('./config/cors')(app);
 
 const authRoutes = require('./routes/auth');
-const socilitudRoutes = require('./routes/solicitud');
+const socilitudRoutes = require('./routes/solicitude');
 app.use('/api/auth', authRoutes);
-app.use('/api/solicitud', socilitudRoutes);
+app.use('/api/solicitude', socilitudRoutes);
 
 app.use((req, res, next) => {
   res.sendfile(__dirname + '/public/index.html');
