@@ -12,6 +12,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HomeComponent } from './home/home.component';
 import { SolicitudeComponent } from './solicitude/solicitude.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SolicitudeComponent } from './solicitude/solicitude.component';
     LoginFormComponent,
     SignupFormComponent,
     HomeComponent,
-    SolicitudeComponent
+    SolicitudeComponent,
+    SolicitudesComponent
   ],
   imports: [
     BrowserModule,
