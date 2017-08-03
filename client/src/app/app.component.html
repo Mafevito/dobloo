@@ -2,6 +2,7 @@
   <div *ngIf="!session.user && session.startLoginCompleted">
     <a  [routerLink]="['login']">Login</a>
     <a  [routerLink]="['signup']">Signup</a>
+    <a  [routerLink]="['solicitud']">Crear nueva solicitud</a>
   </div>
 
   <div *ngIf="session.user && session.startLoginCompleted">
