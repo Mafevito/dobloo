@@ -1,1 +1,9 @@
 <h1> Lista de todas las solicitudes </h1>
+
+<div>
+  <div *ngFor="let solicitude of solicitudes | async" class="blocky">
+    <h3> {{ solicitude.name }} </h3>
+    <p> {{ solicitude.reason }} </p>
+    <a [routerLink]="['solicitude', solicitude._id]"> View Details </a>
+  </div>
+</div>

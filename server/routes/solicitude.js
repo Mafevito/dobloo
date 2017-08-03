@@ -8,6 +8,7 @@ function returnMessage(message){
 }
 
 router.get('/', (req, res) => {
+  console.log("hola");
   Solicitude.find().then( (solicitude) => {
     res.json(solicitude);
   });
@@ -43,11 +44,23 @@ router.post('/', (req, res, next) => {
     });
   })
   .catch(e => res.status(500).json(e));
-
-  solicitude.find({}).then(solicitudes => {
-    res.json(solicitudes);
-  })
-  .catch(e => res.status(500).json(e));
   });
+
+  router.get('/:id', (req,res,next) => {
+    Solicitude.findById(req.params.id).then(solicitude =>{
+      res.json(solicitude);
+    })
+    .catch( e => res.json(e));
+  });
+
+  router.delete('/:id', (req,res,next) => {
+    Solicitude.remove({ _id: req.params.id }).then( () =>{
+      res.json({
+        message:"Solicitude removed"
+      });
+    })
+    .catch( e => res.json(e));
+  });
+
 
 module.exports = router;

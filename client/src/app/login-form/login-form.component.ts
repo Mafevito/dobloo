@@ -12,7 +12,7 @@ export class LoginFormComponent implements OnInit {
   error: string;
   username:string;
   password:string;
-  
+
   constructor(private session: SessionService, private router: Router) { }
   ngOnInit() {
   }

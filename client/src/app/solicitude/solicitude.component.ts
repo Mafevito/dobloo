@@ -27,5 +27,6 @@ export class SolicitudeComponent implements OnInit {
         (user) => console.log(user),
         (err) => this.error = err
       );
+      this.router.navigate(['solicitudes'])
   }
 }
