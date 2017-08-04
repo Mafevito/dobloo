@@ -13,11 +13,11 @@ const userSchema = new Schema({
   password: String,
   fullName: String,
   bloodType: String,
-  birthDate: Number,
+  birthDate: String,
   city: String,
-  weight: Number,
-  height: Number,
-  phoneNumber: Number
+  weight: String,
+  height: String,
+  phoneNumber: String
 }, {
   timestamps: {
     createdAt: 'created_at',

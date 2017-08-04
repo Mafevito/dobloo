@@ -20,13 +20,23 @@ export class SignupFormComponent implements OnInit {
   city:string;
   weight:string;
   height:string;
-  phoneNumber:number;
+  phoneNumber:string;
 
   constructor(private session: SessionService, private router: Router) { }
   ngOnInit() {}
 
   signup() {
-    this.session.signup(this.username, this.password, this.email, this.fullName, this.bloodType, this.birthDate, this.city, this.weight, this.height, this.phoneNumber)
+    this.session.signup(
+      this.username,
+      this.password,
+      this.email,
+      this.fullName,
+      this.bloodType,
+      this.birthDate,
+      this.city,
+      this.weight,
+      this.height,
+      this.phoneNumber)
       .subscribe(
         (user) => console.log(user),
         (err) => this.error = err

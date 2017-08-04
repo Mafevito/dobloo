@@ -6,21 +6,20 @@ import { SolicitudesService } from '../../services/solicitudes.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-solicitude-details',
-  templateUrl: './solicitude-details.component.html',
-  styleUrls: ['./solicitude-details.component.css']
+  selector: 'app-edit-solicitude',
+  templateUrl: './edit-solicitude.component.html',
+  styleUrls: ['./edit-solicitude.component.css']
 })
 
-export class SolicitudeDetailsComponent implements OnInit {
+export class EditSolicitudeComponent implements OnInit {
   solicitude:object;
-  solicitudeId:string;
-  error: string
+  error:string;
 
   constructor(
+    private solicitudesService:SolicitudesService,
     private route: ActivatedRoute,
-    private router: Router,
-    private solicitudesService:SolicitudesService
-  ) {}
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.route.params.subscribe( params => {
@@ -31,12 +30,13 @@ export class SolicitudeDetailsComponent implements OnInit {
     })
   }
 
-  deleteSolicitude() {
-    this.solicitudesService.getDelete(this.solicitude)
+  editSolicitude(){
+    console.log('holi')
+    console.log(this.solicitude)
+    this.solicitudesService.edit(this.solicitude)
     .subscribe(
-      (solicitude) => this.router.navigate(['/solicitudes']),
+      (event) => this.router.navigate(['/solicitudes']),
       (err) => this.error = err
     );
   }
-
 }

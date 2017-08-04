@@ -11,15 +11,24 @@ export class SolicitudesService {
   constructor(private http: Http) { }
 
   getList() {
-    console.log("entro a servicios")
     return this.http.get(`${this.BASE_URL}/api/solicitude`)
       .map((res) => {
         console.log(res);
         return res.json()});
   }
 
-  get(id) {
+  getDetails(id) {
    return this.http.get(`${this.BASE_URL}/api/solicitude/${id}`)
      .map((res) => res.json());
  }
+
+  edit(solicitude) {
+    return this.http.put(`${this.BASE_URL}/api/solicitude/${solicitude._id}`, solicitude)
+    .map((res) => res.json());
+  }
+
+  getDelete(solicitude) {
+    return this.http.delete(`${this.BASE_URL}/api/solicitude/${solicitude._id}`)
+      .map((res) => res.json());
+  }
 }

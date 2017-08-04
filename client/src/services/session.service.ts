@@ -32,7 +32,7 @@ export class SessionService {
     return Observable.throw(e.json().message);
   }
 
-  signup(username:string, password:string, email:string, fullName:string, bloodType:string, birthDate:string, city:string, weight:string, height:string, phoneNumber:number):Observable<User> {
+  signup(username:string, password:string, email:string, fullName:string, bloodType:string, birthDate:string, city:string, weight:string, height:string, phoneNumber:string):Observable<User> {
     return this.http.post(`${this.BASE_URL}/signup`, {username,password,email,fullName,bloodType,birthDate,city,weight,height,phoneNumber}, this.options)
       .map(res => res.json())
       .catch(this.handleError);

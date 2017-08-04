@@ -2,8 +2,8 @@
 
 <div>
   <div *ngFor="let solicitude of solicitudes | async" class="blocky">
-    <h3> {{ solicitude.name }} </h3>
-    <p> {{ solicitude.reason }} </p>
-    <a [routerLink]="['solicitude', solicitude._id]"> View Details </a>
+    <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
+    <p> <b>Motivo:</b>{{ solicitude.reason }} </p>
+    <a [routerLink]="['/solicitudes', solicitude._id]"> View Details </a>
   </div>
 </div>

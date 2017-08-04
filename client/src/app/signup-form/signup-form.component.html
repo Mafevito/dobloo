@@ -17,14 +17,14 @@
   <input type="text" [(ngModel)]="bloodType" name="bloodType"/>-->
   <label> Tipo de sangre </label> <br>
   <select name="select" [(ngModel)]="bloodType" name="bloodType">
-    <option value="value1">A negativo</option>
-    <option value="value2">A positivo</option>
-    <option value="value3">B negativo</option>
-    <option value="value4">B positivo</option>
-    <option value="value5">O negativo</option>
-    <option value="value6">O positivo</option>
-    <option value="value7">AB negativo</option>
-    <option value="value8">AB positivo</option>
+    <option value="A negativo">A negativo</option>
+    <option value="A positivo">A positivo</option>
+    <option value="B negativo">B negativo</option>
+    <option value="B positivo">B positivo</option>
+    <option value="O negativo">O negativo</option>
+    <option value="O positivo">O positivo</option>
+    <option value="AB negativo">AB negativo</option>
+    <option value="AB positivo">AB positivo</option>
   </select>
   <br>
   <label> Fecha de nacimiento </label><br>
@@ -34,15 +34,15 @@
   <input type="text" [(ngModel)]="city" name="city"/>
   <br>
   <label> Peso </label><br>
-  <input type="number" [(ngModel)]="weight" name="weight"/>
+  <input type="text" [(ngModel)]="weight" name="weight"/>
   <br>
   <label> Altura </label><br>
-  <input type="number" [(ngModel)]="height" name="height"/>
+  <input type="text" [(ngModel)]="height" name="height"/>
   <br>
   <label> Numero de telefono </label><br>
-  <input type="number" [(ngModel)]="phoneNumber" name="phoneNumber"/>
+  <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber"/>
   <br>
 
-  <button (click)="signup()"> signup </button>
+  <button type='button' (click)="signup()"> signup </button>
 </form>
 <p class="error"> {{ error }} </p>

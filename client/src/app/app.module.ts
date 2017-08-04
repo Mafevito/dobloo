@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { SolicitudeComponent } from './solicitude/solicitude.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-details.component';
+import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-deta
     HomeComponent,
     SolicitudeComponent,
     SolicitudesComponent,
-    SolicitudeDetailsComponent
+    SolicitudeDetailsComponent,
+    EditSolicitudeComponent,
   ],
   imports: [
     BrowserModule,

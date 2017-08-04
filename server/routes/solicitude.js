@@ -33,7 +33,6 @@ router.post('/', (req, res, next) => {
     amountBlood: req.body.amountBlood,
     reason: req.body.reason,
   });
-
   console.log(solicitude);
 
   solicitude.save()
@@ -54,6 +53,7 @@ router.post('/', (req, res, next) => {
   });
 
   router.delete('/:id', (req,res,next) => {
+    console.log(req);
     Solicitude.remove({ _id: req.params.id }).then( () =>{
       res.json({
         message:"Solicitude removed"

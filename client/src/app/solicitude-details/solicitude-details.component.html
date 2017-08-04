@@ -1,3 +1,13 @@
-<p>
-  solicitude-details works!
-</p>
+<h1> Detalle de la solicitud </h1>
+
+  <div *ngIf="solicitude">
+      <p> <b>Nombre del paciente:</b> {{ solicitude.name  }} </p>
+      <p> <b>Tipo de sangre:</b> {{ solicitude.bloodType }} </p>
+      <p> <b>Fecha de nacimiento:</b> {{ solicitude.birthDate }} </p>
+      <p> <b>Cantidad de donantes que necesita:</b> {{ solicitude.amountBlood }} </p>
+      <p> <b>Motivo por el que necesita la donación:</b> {{ solicitude.reason }} </p>
+      <a [routerLink]="['/update/', solicitude._id]"> Edit </a>
+      <button (click)="deleteSolicitude()"> Delete </button>
+  </div>
+
+  <a [routerLink]="['/solicitudes']"> Back to list </a>

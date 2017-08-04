@@ -7,6 +7,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { SolicitudeComponent } from './solicitude/solicitude.component';
 import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-details.component';
+import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
@@ -14,7 +15,8 @@ export const routes: Routes = [
   { path: 'signup', component: SignupFormComponent },
   { path: 'solicitude', component: SolicitudeComponent },
   { path: 'solicitudes', component: SolicitudesComponent},
-  { path: 'solicitude/:id', component: SolicitudeDetailsComponent},
+  { path: 'solicitudes/:id', component: SolicitudeDetailsComponent},
+  { path: 'update/:id', component: EditSolicitudeComponent},
   { path: 'home', component: HomeComponent },
   { path: '**', redirectTo: '' }
 ];
