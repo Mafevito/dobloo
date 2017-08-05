@@ -13,9 +13,10 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { HomeComponent } from './home/home.component';
 import { SolicitudeComponent } from './solicitude/solicitude.component';
-import { SolicitudesComponent } from './solicitudes/solicitudes.component';
+import { SolicitudeListComponent } from './solicitude-list/solicitude-list.component';
 import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-details.component';
 import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.compo
     SignupFormComponent,
     HomeComponent,
     SolicitudeComponent,
-    SolicitudesComponent,
+    SolicitudeListComponent,
     SolicitudeDetailsComponent,
     EditSolicitudeComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

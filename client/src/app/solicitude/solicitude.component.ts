@@ -9,13 +9,14 @@ import { SolicitudeService } from '../../services/solicitude.service';
   templateUrl: './solicitude.component.html',
   styleUrls: ['./solicitude.component.css']
 })
+
 export class SolicitudeComponent implements OnInit {
   error: string;
-  name: string
-  bloodType: string
-  birthDate: string
-  amountBlood: string
-  reason: string
+  name: string;
+  bloodType: string;
+  birthDate: string;
+  amountBlood: string;
+  reason: string;
 
   constructor(public solicitude: SolicitudeService ,public router: Router) { }
 

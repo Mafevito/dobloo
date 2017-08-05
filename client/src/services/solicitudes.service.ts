@@ -23,7 +23,8 @@ export class SolicitudesService {
  }
 
   edit(solicitude) {
-    return this.http.put(`${this.BASE_URL}/api/solicitude/${solicitude._id}`, solicitude)
+    console.log(solicitude._id)
+    return this.http.put(`${this.BASE_URL}/api/update/${solicitude._id}`, solicitude)
     .map((res) => res.json());
   }
 

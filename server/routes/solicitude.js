@@ -35,6 +35,7 @@ router.post('/', (req, res, next) => {
   });
   console.log(solicitude);
 
+// Guardar
   solicitude.save()
   .then(solicitude => {
     console.log('New solicitude created!');
@@ -45,6 +46,7 @@ router.post('/', (req, res, next) => {
   .catch(e => res.status(500).json(e));
   });
 
+// Editar una solicitud especifica
   router.get('/:id', (req,res,next) => {
     Solicitude.findById(req.params.id).then(solicitude =>{
       res.json(solicitude);
@@ -52,6 +54,15 @@ router.post('/', (req, res, next) => {
     .catch( e => res.json(e));
   });
 
+// Mostrar una solicitud especifica
+  router.get('/:id', (req,res,next) => {
+    Solicitude.findById(req.params.id).then(solicitude =>{
+      res.json(solicitude);
+    })
+    .catch( e => res.json(e));
+  });
+
+// Eliminar por id
   router.delete('/:id', (req,res,next) => {
     console.log(req);
     Solicitude.remove({ _id: req.params.id }).then( () =>{
