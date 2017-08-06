@@ -32,4 +32,5 @@ export class SolicitudesService {
     return this.http.delete(`${this.BASE_URL}/api/solicitude/${solicitude._id}`)
       .map((res) => res.json());
   }
+  
 }

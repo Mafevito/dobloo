@@ -14,12 +14,12 @@ import { Observable } from 'rxjs';
 export class SolicitudeDetailsComponent implements OnInit {
   solicitude:object;
   solicitudeId:string;
-  error: string
+  error: string;
 
   constructor(
-    private route: ActivatedRoute,
+    private solicitudesService:SolicitudesService,
     private router: Router,
-    private solicitudesService:SolicitudesService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -37,6 +37,10 @@ export class SolicitudeDetailsComponent implements OnInit {
       (solicitude) => this.router.navigate(['/solicitudes']),
       (err) => this.error = err
     );
+  }
+
+  donate() {
+    console.log('gracias por donar')
   }
 
 }

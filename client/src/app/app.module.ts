@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { SessionService } from '../services/session.service';
 import { SolicitudeService } from '../services/solicitude.service';
 import { SolicitudesService } from '../services/solicitudes.service';
+import { ProfileDetailsService } from '../services/profile-details.service';
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -28,7 +29,7 @@ import { ProfileComponent } from './profile/profile.component';
     SolicitudeListComponent,
     SolicitudeDetailsComponent,
     EditSolicitudeComponent,
-    ProfileComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, SolicitudeService, SolicitudesService],
+  providers: [SessionService, SolicitudeService, SolicitudesService, ProfileDetailsService],
   bootstrap: [AppComponent]
 })
 

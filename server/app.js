@@ -10,8 +10,10 @@ require('./config/cors')(app);
 
 const authRoutes = require('./routes/auth');
 const socilitudRoutes = require('./routes/solicitude');
+const profileRoutes = require('./routes/profile');
 app.use('/api/auth', authRoutes);
 app.use('/api/solicitude', socilitudRoutes);
+//app.use('/api/profile', profileRoutes);
 
 app.use((req, res, next) => {
   res.sendfile(__dirname + '/public/index.html');

@@ -7,8 +7,9 @@
   </div>
 
   <div *ngIf="session.user && session.startLoginCompleted">
-    <pre>{{ session.user | json }}</pre>
+  <pre>{{ session.user | json }}</pre>
     <button (click)="logout()">Logout</button>
+    <a [routerLink]="['/profile/', session.user._id]">Ver perfil</a>
   </div>
 
 <router-outlet></router-outlet>

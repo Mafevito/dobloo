@@ -23,6 +23,7 @@ export class SignupFormComponent implements OnInit {
   phoneNumber: string;
 
   constructor(private session: SessionService, private router: Router) { }
+
   ngOnInit() {}
 
   signup() {
@@ -43,4 +44,4 @@ export class SignupFormComponent implements OnInit {
       );
       this.router.navigate(['home'])
    }
-  }
+}
