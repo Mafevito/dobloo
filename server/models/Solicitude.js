@@ -14,6 +14,9 @@ const solicitudeSchema = new Schema({
   amountBlood:{
     type:String,
   },
+  city: {
+    type:String,
+  },
   reason: {
     type:String,
   },

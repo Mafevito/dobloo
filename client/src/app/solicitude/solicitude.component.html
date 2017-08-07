@@ -1,10 +1,8 @@
 <h1> Solicitar donantes </h1>
 <form>
-  <label> Nombre </label><br>
+  <label> Nombre Completo</label><br>
   <input type="text" [(ngModel)]="name" name="name"/>
   <br>
-  <!--<label> Tipo de sangre </label><br>
-  <input type="text" [(ngModel)]="bloodType" name="bloodType"/>-->
   <label> Tipo de sangre </label> <br>
   <select name="select" [(ngModel)]="bloodType" name="bloodType">
     <option value="A negativo">A negativo</option>
@@ -22,6 +20,9 @@
   <br>
   <label> Cantidad donantes </label><br>
   <input type="number" [(ngModel)]="amountBlood" name="amountBlood"/>
+  <br>
+  <label> Ciudad </label><br>
+  <input type="text" [(ngModel)]="city" name="city"/>
   <br>
   <label> Motivo por el que solicitas sangre.. </label><br>
   <input type="text" [(ngModel)]="reason" name="reason"/>

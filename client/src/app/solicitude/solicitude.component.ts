@@ -16,6 +16,7 @@ export class SolicitudeComponent implements OnInit {
   bloodType: string;
   birthDate: string;
   amountBlood: string;
+  city: string;
   reason: string;
 
   constructor(public solicitude: SolicitudeService ,public router: Router) { }
@@ -23,7 +24,7 @@ export class SolicitudeComponent implements OnInit {
   ngOnInit() {}
 
   submit(){
-    this.solicitude.newSolicitude(this.name, this.bloodType, this.birthDate, this.amountBlood, this.reason)
+    this.solicitude.newSolicitude(this.name, this.bloodType, this.birthDate, this.amountBlood, this.city, this.reason)
       .subscribe(
         (user) => console.log(user),
         (err) => this.error = err

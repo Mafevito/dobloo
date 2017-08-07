@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res, next) => {
 
-  const { name, bloodType, birthDate, amountBlood, reason} = req.body;
+  const { name, bloodType, birthDate, amountBlood, city, reason} = req.body;
 
   if(!name || !bloodType || !amountBlood) {
     res.status(400).json({
@@ -31,6 +31,7 @@ router.post('/', (req, res, next) => {
     name: req.body.name,
     bloodType: req.body.bloodType,
     amountBlood: req.body.amountBlood,
+    city: req.body.city,
     reason: req.body.reason,
   });
   console.log(solicitude);

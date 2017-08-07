@@ -18,6 +18,7 @@ import { SolicitudeListComponent } from './solicitude-list/solicitude-list.compo
 import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-details.component';
 import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     SolicitudeListComponent,
     SolicitudeDetailsComponent,
     EditSolicitudeComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

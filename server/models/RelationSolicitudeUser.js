@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const RelationSolicitudUserSchema = new Schema ({
   solicitudID: {
-    type: Schema.ObjectId, ref: 'NewSolicitude'
+    type: Schema.Types.ObjectId,
+    ref: 'NewSolicitude'
   },
-  idDonante: {
-    type: Schema.ObjectId, ref: 'User'
+  donanteID: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
 }, {
     timestamps: {
