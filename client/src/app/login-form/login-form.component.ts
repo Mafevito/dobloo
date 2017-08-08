@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
         (user) => console.log(user),
         (err) => this.error = err
       );
-      this.router.navigate(['home'])
+      this.router.navigate(['solicitudes'])
   }
 
  }

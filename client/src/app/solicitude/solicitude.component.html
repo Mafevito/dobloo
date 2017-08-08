@@ -1,33 +1,41 @@
-<h1> Solicitar donantes </h1>
-<form>
-  <label> Nombre Completo</label><br>
-  <input type="text" [(ngModel)]="name" name="name"/>
-  <br>
-  <label> Tipo de sangre </label> <br>
-  <select name="select" [(ngModel)]="bloodType" name="bloodType">
-    <option value="A negativo">A negativo</option>
-    <option value="A positivo">A positivo</option>
-    <option value="B negativo">B negativo</option>
-    <option value="B positivo">B positivo</option>
-    <option value="O negativo">O negativo</option>
-    <option value="O positivo">O positivo</option>
-    <option value="AB negativo">AB negativo</option>
-    <option value="AB positivo">AB positivo</option>
-  </select>
-  <br>
-  <label> Fecha de nacimiento </label><br>
-  <input type="date" [(ngModel)]="birthDate" name="birthDate"/>
-  <br>
-  <label> Cantidad donantes </label><br>
-  <input type="number" [(ngModel)]="amountBlood" name="amountBlood"/>
-  <br>
-  <label> Ciudad </label><br>
-  <input type="text" [(ngModel)]="city" name="city"/>
-  <br>
-  <label> Motivo por el que solicitas sangre.. </label><br>
-  <input type="text" [(ngModel)]="reason" name="reason"/>
-  <br>
+<app-navbar></app-navbar>
 
-  <button (click)="submit()"> submit </button>
-</form>
-<p class="error"> {{ error }} </p>
+<div class="container">
+  <div class="row">
+    <h1> Solicitar donantes </h1>
+    <form>
+      <div class="col-md-6 col-md-offset-3 solicitude-form">
+      <label> Nombre Completo</label>
+      <input type="text" class="form-control" [(ngModel)]="name" name="name"/>
+      <br>
+      <label> Tipo de sangre </label>
+      <select name="select" class="form-control" [(ngModel)]="bloodType" name="bloodType">
+        <option value="A negativo">A negativo</option>
+        <option value="A positivo">A positivo</option>
+        <option value="B negativo">B negativo</option>
+        <option value="B positivo">B positivo</option>
+        <option value="O negativo">O negativo</option>
+        <option value="O positivo">O positivo</option>
+        <option value="AB negativo">AB negativo</option>
+        <option value="AB positivo">AB positivo</option>
+      </select>
+      <br>
+      <label> Fecha de nacimiento </label>
+      <input type="date" class="form-control" [(ngModel)]="birthDate" name="birthDate"/>
+      <br>
+      <label> Cantidad donantes </label>
+      <input type="number" class="form-control" [(ngModel)]="amountBlood" name="amountBlood"/>
+      <br>
+      <label> Ciudad </label>
+      <input type="text" class="form-control" [(ngModel)]="city" name="city"/>
+      <br>
+      <label> Motivo por el que solicitas sangre.. </label>
+      <input type="text" class="form-control" [(ngModel)]="reason" name="reason"/>
+      <br>
+
+      <button type="button" (click)="submit()"> submit </button>
+    </div>
+    </form>
+    <p class="error"> {{ error }} </p>
+  </div>
+</div>

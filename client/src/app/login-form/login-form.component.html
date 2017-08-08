@@ -1,13 +1,23 @@
-<h1> Authentication Sample </h1>
-<form>
-  <h2> Login </h2>
-  <label> Username </label><br>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label><br>
-  <input type="password" [(ngModel)]="password" name="password"/>
-  <br>
+<app-navbar></app-navbar>
 
-  <button (click)="login()"> login</button>
-</form>
-<p class="error"> {{ error }} </p>
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="login-form">
+        <h1>Login</h1>
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <div class="form-group">
+          <label> Username </label>
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" />
+        </div>
+        <br>
+        <label> Password </label><br>
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" />
+        <br>
+
+        <button type="button" class="login-btn" (click)="login()"> Login</button>
+      </div>
+    </form>
+    <p class="error"> {{ error }} </p>
+  </div>
+</div>

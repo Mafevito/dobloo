@@ -1,3 +1,5 @@
+<router-outlet></router-outlet>
+
 <h1> Welcome to {{title}}! </h1>
   <div *ngIf="!session.user && session.startLoginCompleted">
     <a  [routerLink]="['login']">Login</a>
@@ -12,5 +14,3 @@
     <button (click)="logout()">Logout</button>
     <a [routerLink]="['/profile/', session.user._id]">Ver perfil</a>
   </div>
-
-<router-outlet></router-outlet>

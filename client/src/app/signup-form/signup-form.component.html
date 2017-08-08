@@ -1,20 +1,32 @@
-<h1> Authentication Sample </h1>
-<form>
-  <h2> Signup </h2>
-  <label> Username </label><br>
-  <input type="text" [(ngModel)]="username" name="username"/>
-  <br>
-  <label> Password </label><br>
-  <input type="password" [(ngModel)]="password" name="password" required/>
-  <br>
-  <label> Email </label><br>
-  <input type="text" [(ngModel)]="email" name="email"/>
-  <br>
-  <label> Nombre completo </label><br>
-  <input type="text" [(ngModel)]="fullName" name="fullName"/>
-  <br>
-  <label> Tipo de sangre </label> <br>
-  <select name="select" [(ngModel)]="bloodType" name="bloodType">
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="row">
+    <form>
+      <!-- <div class="login-form"> -->
+      <div class="col-md-6 col-md-offset-3">
+        <h1> Signup </h1>
+        <div class="row">
+          <div class="col-xs-6 col-md-6">
+            <label> Username </label>
+            <input type="text" class="form-control" [(ngModel)]="username" name="username" />
+          </div>
+        <div class="col-xs-6 col-md-6">
+          <label> Password </label>
+          <input type="password" class="form-control" [(ngModel)]="password" name="password" required/>
+        </div>
+
+      </div>
+      <br>
+        <!-- <div class="row"> -->
+        <label> Nombre completo </label>
+        <input type="text" class="form-control" [(ngModel)]="fullName" name="fullName" />
+        <br>
+        <label> Email </label>
+        <input type="text" class="form-control" [(ngModel)]="email" name="email" />
+        <br>
+        <label> Tipo de sangre </label>
+        <select name="select" class="form-control" [(ngModel)]="bloodType" name="bloodType">
     <option value="A negativo">A negativo</option>
     <option value="A positivo">A positivo</option>
     <option value="B negativo">B negativo</option>
@@ -24,25 +36,31 @@
     <option value="AB negativo">AB negativo</option>
     <option value="AB positivo">AB positivo</option>
   </select>
-  <br>
-  <label> Fecha de nacimiento </label><br>
-  <input type="date" [(ngModel)]="birthDate" name="birthDate"/>
-  <br>
-  <label> Ciudad </label><br>
-  <input type="text" [(ngModel)]="city" name="city"/>
-  <br>
-  <label> Peso </label><br>
-  <input type="text" [(ngModel)]="weight" name="weight" min="1" max="50"/>
-  <br>
-  <label> Altura </label><br>
-  <input type="text" [(ngModel)]="height" name="height"/>
-  <br>
-  <label> Numero de telefono </label><br>
-  <input type="text" [(ngModel)]="phoneNumber" name="phoneNumber"/>
-  <br>
+        <br>
+        <label> Fecha de nacimiento </label><br>
+        <input type="date" class="form-control" [(ngModel)]="birthDate" name="birthDate" />
+        <br>
+        <label> Ciudad </label><br>
+        <input type="text" class="form-control" [(ngModel)]="city" name="city" />
+        <br>
+        <label> Peso </label><br>
+        <input type="text" class="form-control" [(ngModel)]="weight" name="weight" min="1" max="50" />
+        <br>
+        <label> Altura </label><br>
+        <input type="text" class="form-control" [(ngModel)]="height" name="height" />
+        <br>
+        <label> Numero de telefono </label><br>
+        <input type="text" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber" />
+        <br>
 
-  <button type="submit" (click)="signup()"> signup </button>
-</form>
-<p class="error"> {{ error }} </p>
-
-<a [routerLink]="['/login']"> Already has an account, Go to login </a>
+        <button type="submit" class="signup-btn" (click)="signup()"> Signup </button>
+        <div class="text-signup">
+          <a [routerLink]="['/login']"> Already has an account, Go to login </a>
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+    </div>
+    </form>
+    <p class="error"> {{ error }} </p>
+  </div>
+</div>
