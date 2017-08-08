@@ -10,18 +10,41 @@ const router = express.Router();
 function returnMessage(message){
   return (req,res,next) => res.status(500).json({error:true, message:message});
 }
-router.get('/relationSolicitudeUser', (req, res) => {
+router.get('/relationNew/:id', (req, res, next) => {
+  console.log(req.params.id);
   const solicitudId = req.params.id;
-  console.log("yellow");
-  Solicitude.findById(solicitudId).populate(user).exec().then( solicitude => {
-    console.log(solicitude.solicitudes);
-    User.populate(solicitudes, {path: user}, (err, solicitudes) => {
-      res.status(200).send(solicitudes);
+  RelationSolicitudeUser.find({solicitudId: solicitudId})
+  .exec()
+  .then(solicitudes => {
+    promisesDonantes = solicitudes.map( s => {
+      return new Promise((resolve, reject) => {
+        s.populate('donanteId solicitudId', (err, solicitudPop) => {
+          resolve(solicitudPop);
+        });
+      });
     });
-  }).catch(e => console.log(e));
+    Promise.all(promisesDonantes).then((donantesPopulated) => {
+      console.log(donantesPopulated);
+      return res.status(200).json(donantesPopulated);
+    });
+})
+.catch(err => {
+  console.log(err);
+  return res.status(500).json({
+    message: 'Error getting relation',
+    error: err
+  });
 });
 
-router.post('/relationNew', (req,res,next) => {
+  // Solicitude.findById(solicitudId).populate(user).exec().then( solicitude => {
+  //   console.log(solicitude.solicitudes);
+  //   User.populate(solicitudes, {path: user}, (err, solicitudes) => {
+  //     res.status(200).send(solicitudes);
+  //   });
+  // }).catch(e => console.log(e));
+});
+
+router.post('/relationNew', (req, res, next) => {
   const relation = new RelationSolicitudeUser({
     solicitudId:req.body.solicitudeId,
     donanteId:req.body.userId
