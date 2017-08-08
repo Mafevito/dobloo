@@ -3,7 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment'
 import { SolicitudesService } from '../../services/solicitudes.service';
+import { SessionService} from '../../services/session.service'
 import { Observable } from 'rxjs';
+import {RelationSolicitudeUserService} from '../../services/relation-solicitude-user.service'
 
 @Component({
   selector: 'app-solicitude-details',
@@ -12,17 +14,25 @@ import { Observable } from 'rxjs';
 })
 
 export class SolicitudeDetailsComponent implements OnInit {
-  solicitude:object;
+  solicitude:any;
   solicitudeId:string;
   error: string;
+  user:any;
+  relationForm = {
+    userId:'',
+    solicitudeId:''
+  }
 
   constructor(
+    private sessionUser : SessionService,
     private solicitudesService:SolicitudesService,
+    private relationSolicitudeUserService:RelationSolicitudeUserService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.sessionUser.isLoggedIn().subscribe( result => this.user = result);
     this.route.params.subscribe( params => {
       this.solicitudesService.getDetails(params['id'])
         .subscribe( solicitude => {
@@ -39,7 +49,13 @@ export class SolicitudeDetailsComponent implements OnInit {
     );
   }
 
+/* Relation SolicitudeUser*/
   donate() {
+    console.log(this.user._id);
+    console.log(this.solicitude._id)
+    this.relationForm.userId=this.user._id;
+    this.relationForm.solicitudeId=this.solicitude._id;
+    this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm).subscribe(result => console.log(result));
     console.log('gracias por donar')
   }
 

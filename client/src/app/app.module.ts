@@ -9,6 +9,7 @@ import { SessionService } from '../services/session.service';
 import { SolicitudeService } from '../services/solicitude.service';
 import { SolicitudesService } from '../services/solicitudes.service';
 import { ProfileDetailsService } from '../services/profile-details.service';
+import {RelationSolicitudeUserService } from '../services/relation-solicitude-user.service'
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -19,6 +20,9 @@ import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-deta
 import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +41,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    // ChartsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, SolicitudeService, SolicitudesService, ProfileDetailsService],
+  providers: [SessionService, RelationSolicitudeUserService , SolicitudeService, SolicitudesService, ProfileDetailsService],
   bootstrap: [AppComponent]
 })
 

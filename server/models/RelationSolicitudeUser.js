@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RelationSolicitudUserSchema = new Schema ({
-  solicitudID: {
+  solicitudId: {
     type: Schema.Types.ObjectId,
     ref: 'NewSolicitude'
   },
-  donanteID: {
+  donanteId: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
