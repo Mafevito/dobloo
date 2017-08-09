@@ -52,10 +52,12 @@ export class SolicitudeDetailsComponent implements OnInit {
 /* Relation SolicitudeUser*/
   donate() {
     console.log(this.user._id);
+    console.log(`nombre del solicitante => ${this.solicitude.name}`);
     console.log(this.solicitude._id)
-    this.relationForm.userId=this.user._id;
-    this.relationForm.solicitudeId=this.solicitude._id;
-    this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm).subscribe(result => console.log(result));
+    this.relationForm.userId = this.user._id;
+    this.relationForm.solicitudeId = this.solicitude._id;
+    this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm)
+      .subscribe( result => this.router.navigate(['/profile/', this.user._id ]));
     console.log('gracias por donar')
   }
 

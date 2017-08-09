@@ -6,8 +6,15 @@
   <p> <b>Hola:</b> {{ user.fullName }} </p>
   <p> <b>Username:</b> @{{ user.username }} </p>
   <p> <b>City:</b> {{ user.city }} </p>
+</div>
 
-  <h4> Solicitudes creadas: </h4>
-  <h4> Personas a las que he ayudado: </h4>
-
+<div *ngIf="donations">
+  <ul *ngFor="let donation of donations">
+    <li>Name: {{ donation.solicitudId.name }}</li>
+    <li>Blood type: {{ donation.solicitudId.bloodType }}</li>
+    <li>Amount: {{ donation.solicitudId.amountBlood }}</li>
+    <li>Reason: {{ donation.solicitudId.reason }}</li>
+  </ul>
+<h4> Solicitudes creadas: </h4>
+<h4> Personas a las que he ayudado: </h4>
 </div>

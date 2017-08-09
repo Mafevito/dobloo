@@ -13,10 +13,14 @@ export class RelationSolicitudeUserService {
   constructor(private http: Http) {}
 
   solicitudeUserRelation(content) {
-console.log(content)
-    console.log(`${this.BASE_URL}/api/relation/relationNew`)
+  console.log(content)
     return this.http.post(`${this.BASE_URL}/api/relation/relationNew`, content,this.options)
-      .map(res => res.json())
+         .map(res => res.json())
+  }
+
+  getUserDonations(user){
+    return this.http.get(`${this.BASE_URL}/api/relation/user-donations/${user._id}`, this.options)
+      .map( res => res.json() )
   }
 
 }

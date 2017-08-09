@@ -22,6 +22,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
+// import { AgmCoreModule } from "angular2-google-maps/core";
 import { ChartsComponent } from './charts/charts.component';
 
 @NgModule({
@@ -42,6 +43,10 @@ import { ChartsComponent } from './charts/charts.component';
     FormsModule,
     HttpModule,
     // ChartsModule,
+ //    AgmCoreModule.forRoot({
+ //   apiKey: "YOUR KEY GOES HERE",
+ //   libraries: ["places"]
+ // }),
     RouterModule.forRoot(routes)
   ],
   providers: [SessionService, RelationSolicitudeUserService , SolicitudeService, SolicitudesService, ProfileDetailsService],
