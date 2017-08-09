@@ -58,7 +58,7 @@ export class SolicitudeDetailsComponent implements OnInit {
     this.relationForm.solicitudeId = this.solicitude._id;
     this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm)
       .subscribe( result => this.router.navigate(['/profile/', this.user._id ]));
-    console.log('gracias por donar')
+       console.log('gracias por donar')
   }
 
 }

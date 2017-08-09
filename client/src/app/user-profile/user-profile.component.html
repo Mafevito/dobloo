@@ -1,20 +1,26 @@
 <app-navbar></app-navbar>
 
-<h1> Profile </h1>
+<div class="container">
+  <div class="row">
+    <h1> Profile </h1>
 
-<div *ngIf="user">
-  <p> <b>Hola:</b> {{ user.fullName }} </p>
-  <p> <b>Username:</b> @{{ user.username }} </p>
-  <p> <b>City:</b> {{ user.city }} </p>
+    <div *ngIf="user">
+      <p> <b>Hola:</b> {{ user.fullName }} </p>
+      <p> <b>Username:</b> @{{ user.username }} </p>
+      <p> <b>City:</b> {{ user.city }} </p>
+    </div>
+
+    <h4> Personas a las que he ayudado: </h4>
+    <div *ngIf="donations">
+      <ul *ngFor="let donation of donations">
+        <li *ngIf="donation.solicitudId.name">Name: {{ donation.solicitudId.name }}</li>
+        <li *ngIf="donation.solicitudId.bloodType">Blood type: {{ donation.solicitudId.bloodType }}</li>
+        <li *ngIf="donation.solicitudId.amountBlood">Amount: {{ donation.solicitudId.amountBlood }}</li>
+        <li *ngIf="donation.solicitudId.reason">Reason: {{ donation.solicitudId.reason }}</li>
+      </ul>
+      <!-- <h4> Solicitudes creadas: </h4> -->
+    </div>
+  </div>
 </div>
 
-<div *ngIf="donations">
-  <ul *ngFor="let donation of donations">
-    <li>Name: {{ donation.solicitudId.name }}</li>
-    <li>Blood type: {{ donation.solicitudId.bloodType }}</li>
-    <li>Amount: {{ donation.solicitudId.amountBlood }}</li>
-    <li>Reason: {{ donation.solicitudId.reason }}</li>
-  </ul>
-<h4> Solicitudes creadas: </h4>
-<h4> Personas a las que he ayudado: </h4>
-</div>
+<app-maps></app-maps>

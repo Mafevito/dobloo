@@ -20,7 +20,7 @@ router.get('/user-donations/:id', (req, res) => {
   }).catch(error => { res.json(error); });
 });
 
-router.post('/relationNew', (req, res, next) => {
+router.post('/relation-sd', (req, res, next) => {
   const relation = new RelationSolicitudeUser({
     solicitudId:req.body.solicitudeId,
     donanteId:req.body.userId

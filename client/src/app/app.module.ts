@@ -20,11 +20,14 @@ import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-deta
 import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MapsComponent } from './maps/maps.component';
 
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
-// import { AgmCoreModule } from "angular2-google-maps/core";
+import { AgmCoreModule } from "@agm/core";
+import {} from '@types/googlemaps'
+import { ReactiveFormsModule } from '@angular/forms';
 import { ChartsComponent } from './charts/charts.component';
-
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,17 +39,19 @@ import { ChartsComponent } from './charts/charts.component';
     SolicitudeDetailsComponent,
     EditSolicitudeComponent,
     UserProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     // ChartsModule,
- //    AgmCoreModule.forRoot({
- //   apiKey: "YOUR KEY GOES HERE",
- //   libraries: ["places"]
- // }),
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyCg7JIFACkTcy3Vn3tg-xsNzPQoeOzO-M8",
+      libraries: ["places"]
+    }),
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [SessionService, RelationSolicitudeUserService , SolicitudeService, SolicitudesService, ProfileDetailsService],
