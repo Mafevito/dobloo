@@ -15,26 +15,27 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res, next) => {
+  let name = req.body.formInfo.name;
+  let bloodType = req.body.formInfo.bloodType;
+  let amountBlood = req.body.formInfo.amountBlood;
 
-  const { name, bloodType, birthDate, amountBlood, city, reason} = req.body;
-
+  console.log(req.body.formInfo);
   if(!name || !bloodType || !amountBlood) {
     res.status(400).json({
       message: 'Provide the dates'
     });
     return;
   }
-  console.log(req.body);
-  //res.json('holi');
-  //res.json(req.body);
+
   const solicitude = new Solicitude ({
-    name: req.body.name,
-    bloodType: req.body.bloodType,
-    amountBlood: req.body.amountBlood,
-    city: req.body.city,
-    reason: req.body.reason,
+    name: req.body.formInfo.name,
+    bloodType: req.body.formInfo.bloodType,
+    amountBlood: req.body.formInfo.amountBlood,
+    city: req.body.formInfo.cityPosition,
+    reason: req.body.formInfo.reason,
   });
-  console.log(solicitude);
+
+console.log(solicitude);
 
 // Guardar
   solicitude.save()

@@ -15,7 +15,7 @@ const solicitudeSchema = new Schema({
     type:String,
   },
   city: {
-    type:String,
+    type: Object
   },
   reason: {
     type:String,

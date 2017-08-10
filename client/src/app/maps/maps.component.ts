@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ElementRef, NgZone, ViewChild } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { MapsAPILoader } from '@agm/core';
@@ -14,6 +14,8 @@ export class MapsComponent implements OnInit {
   public longitude: number;
   public searchControl: FormControl;
   public zoom: number;
+
+  @Output() locationEmitter = new EventEmitter<object>()
 
   @ViewChild("search")
   public searchElementRef: ElementRef;
@@ -54,6 +56,11 @@ export class MapsComponent implements OnInit {
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
           this.zoom = 12;
+          let positionFinal = {
+            latitud: this.latitude,
+            longitud: this.longitude
+          }
+          this.locationEmitter.emit(positionFinal)
         });
       });
     });

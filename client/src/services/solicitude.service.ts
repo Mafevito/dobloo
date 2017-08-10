@@ -23,8 +23,8 @@ export class SolicitudeService {
     return Observable.throw(e.json().message);
   }
 
-  newSolicitude(name:string, bloodType:string, birthDate:string, amountBlood:string, city:string, reason:string):Observable<Solicitude> {
-    return this.http.post(`${this.BASE_URL}`, {name,bloodType,birthDate,amountBlood,city, reason}, this.options)
+  newSolicitude(formInfo: object):Observable<Solicitude> {
+    return this.http.post(`${this.BASE_URL}`, {formInfo}, this.options)
     .map(res => res.json())
     .catch(this.handleError);
   }

@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 })
 
 export class UserProfileComponent implements OnInit {
-  user: object;
+  user: any;
   donations: any;
 
   constructor(

@@ -6,10 +6,10 @@
     <form>
       <div class="col-md-6 col-md-offset-3 solicitude-form">
       <label> Nombre Completo</label>
-      <input type="text" class="form-control" [(ngModel)]="name" name="name"/>
+      <input type="text" class="form-control" [(ngModel)]="formInfo.name" name="name"/>
       <br>
       <label> Tipo de sangre </label>
-      <select name="select" class="form-control" [(ngModel)]="bloodType" name="bloodType">
+      <select name="select" class="form-control" [(ngModel)]="formInfo.bloodType" name="bloodType">
         <option value="A negativo">A negativo</option>
         <option value="A positivo">A positivo</option>
         <option value="B negativo">B negativo</option>
@@ -21,17 +21,17 @@
       </select>
       <br>
       <label> Fecha de nacimiento </label>
-      <input type="date" class="form-control" [(ngModel)]="birthDate" name="birthDate"/>
+      <input type="date" class="form-control" [(ngModel)]="formInfo.birthDate" name="birthDate"/>
       <br>
       <label> Cantidad donantes </label>
-      <input type="number" class="form-control" [(ngModel)]="amountBlood" name="amountBlood"/>
+      <input type="number" class="form-control" [(ngModel)]="formInfo.amountBlood" name="amountBlood"/>
       <br>
       <label> Ciudad </label>
-      <!-- <input type="text" class="form-control" [(ngModel)]="city" name="city"/> -->
-      <app-maps></app-maps>
+      <!-- <input type="text" class="form-control" [(ngModel)]="formInfo.city" name="city"/> -->
+      <app-maps (locationEmitter)= "getPosition($event)"></app-maps>
       <br>
       <label> Motivo por el que solicitas sangre.. </label>
-      <input type="text" class="form-control" [(ngModel)]="reason" name="reason"/>
+      <input type="text" class="form-control" [(ngModel)]="formInfo.reason" name="reason"/>
       <br>
 
       <button type="button" (click)="submit()"> submit </button>

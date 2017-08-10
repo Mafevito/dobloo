@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment'
@@ -41,6 +41,8 @@ export class SolicitudeDetailsComponent implements OnInit {
     this.route.params.subscribe( params => {
       this.solicitudesService.getDetails(params['id'])
         .subscribe( solicitude => {
+          // console.log(solicitude);
+          console.log(solicitude)
           this.solicitude = solicitude
         })
     })
