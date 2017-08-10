@@ -9,7 +9,7 @@ import { SessionService } from '../services/session.service';
 import { SolicitudeService } from '../services/solicitude.service';
 import { SolicitudesService } from '../services/solicitudes.service';
 import { ProfileDetailsService } from '../services/profile-details.service';
-import {RelationSolicitudeUserService } from '../services/relation-solicitude-user.service'
+import { RelationSolicitudeUserService } from '../services/relation-solicitude-user.service'
 
 import { LoginFormComponent } from './login-form/login-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
@@ -21,13 +21,16 @@ import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapsComponent } from './maps/maps.component';
+import { ChartsComponent } from './charts/charts.component';
 
 // import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { AgmCoreModule } from "@agm/core";
 import {} from '@types/googlemaps'
 import { ReactiveFormsModule } from '@angular/forms';
-import { ChartsComponent } from './charts/charts.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,13 +43,15 @@ import { CommonModule } from '@angular/common';
     EditSolicitudeComponent,
     UserProfileComponent,
     NavbarComponent,
-    MapsComponent
+    MapsComponent,
+    ChartsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    // ChartsModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCg7JIFACkTcy3Vn3tg-xsNzPQoeOzO-M8",
       libraries: ["places"]

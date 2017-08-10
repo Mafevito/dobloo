@@ -20,7 +20,7 @@ router.get('/user-donations/:id', (req, res) => {
   }).catch(error => { res.json(error); });
 });
 
-router.post('/relation-sd', (req, res, next) => {
+router.post('/solicitude-donante', (req, res, next) => {
   const relation = new RelationSolicitudeUser({
     solicitudId:req.body.solicitudeId,
     donanteId:req.body.userId
@@ -29,6 +29,5 @@ router.post('/relation-sd', (req, res, next) => {
     .then( solicitude => {res.json({ message: 'New Relation created!' });})
     .catch(e => res.status(500).json(e));
 });
-
 
 module.exports = router;

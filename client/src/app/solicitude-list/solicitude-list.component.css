@@ -1,0 +1,15 @@
+.container > .row > h1 {
+  margin-bottom: 50px;
+}
+
+.all-solicitudes {
+  margin: 10px 0;
+}
+
+.one-solicitude {
+  border: 2px solid #18BC9C;
+}
+
+.info-maps {
+  margin: 50px 80px;
+}

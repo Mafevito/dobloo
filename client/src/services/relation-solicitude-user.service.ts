@@ -14,7 +14,7 @@ export class RelationSolicitudeUserService {
 
   solicitudeUserRelation(content) {
   console.log(content)
-    return this.http.post(`${this.BASE_URL}/api/relation/relation-sd`, content,this.options)
+    return this.http.post(`${this.BASE_URL}/api/relation/solicitude-donante`, content,this.options)
          .map(res => res.json())
   }
 

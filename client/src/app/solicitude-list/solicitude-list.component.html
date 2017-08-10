@@ -1,11 +1,39 @@
 <app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
 
-<h1> Lista de todas las solicitudes </h1>
+    <h1> Personas que necesitan de ti </h1>
 
-<div>
-  <div *ngFor="let solicitude of solicitudes | async" class="blocky">
-    <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
-    <p> <b>Motivo:</b>{{ solicitude.reason }} </p>
-    <a [routerLink]="['/solicitudes', solicitude._id]"> View Details </a>
+
+
+    <!-- <div class="col-sm-4 portfolio-item one-solicitude" *ngFor="let solicitude of solicitudes | async" class="blocky">
+                <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
+                <p> <b>Motivo:</b>{{ solicitude.reason }} </p>
+                <a [routerLink]="['/solicitudes', solicitude._id]"> View Details </a>
+              </div> -->
+
+    <div *ngFor="let solicitude of solicitudes | async" class="blocky">
+      <div class="col-md-6 all-solicitudes">
+        <div class="thumbnail one-solicitude">
+          <div class="caption info-solicitude">
+            <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
+            <p> <b>Motivo:</b>{{ solicitude.reason }} </p>
+            <a [routerLink]="['/solicitudes', solicitude._id]"> View Details </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+        <h2>Donaciones realizadas este mes</h2>
+        <div class="info-maps">
+      <app-charts></app-charts>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,4 +1,4 @@
-<canvas id="myChart" width="400" height="400"></canvas>
+<!-- <canvas id="myChart" width="400" height="400"></canvas>
 <script>
 var ctx = document.getElementById("myChart");
 var myChart = new Chart(ctx, {
@@ -37,4 +37,21 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-</script>
+</script> -->
+
+
+
+
+<div>
+  <div style="display: block">
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+  <button (click)="randomize()">Update</button>
+</div>

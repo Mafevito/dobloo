@@ -54,3 +54,7 @@ h1 {
 .text-signup {
   margin-top: 20px;
 }
+
+.signup-btn:hover {
+  font-size: 20px;
+}

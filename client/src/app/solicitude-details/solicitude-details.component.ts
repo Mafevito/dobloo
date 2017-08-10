@@ -7,6 +7,10 @@ import { SessionService} from '../../services/session.service'
 import { Observable } from 'rxjs';
 import {RelationSolicitudeUserService} from '../../services/relation-solicitude-user.service'
 
+import { ElementRef, NgZone, ViewChild } from '@angular/core';
+import { FormControl } from "@angular/forms";
+import { MapsAPILoader } from '@agm/core';
+
 @Component({
   selector: 'app-solicitude-details',
   templateUrl: './solicitude-details.component.html',
@@ -22,6 +26,7 @@ export class SolicitudeDetailsComponent implements OnInit {
     userId:'',
     solicitudeId:''
   }
+  progress = 0;
 
   constructor(
     private sessionUser : SessionService,
@@ -57,8 +62,11 @@ export class SolicitudeDetailsComponent implements OnInit {
     this.relationForm.userId = this.user._id;
     this.relationForm.solicitudeId = this.solicitude._id;
     this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm)
-      .subscribe( result => this.router.navigate(['/profile/', this.user._id ]));
+      .subscribe( result => this.router.navigate(['/solicitudes/', this.solicitude._id ]));
        console.log('gracias por donar')
+
+       this.progress+=20;
+       console.log(this.progress);
   }
 
 }

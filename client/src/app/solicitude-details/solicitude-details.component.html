@@ -1,18 +1,44 @@
 <app-navbar></app-navbar>
-<!-- <app-charts></app-charts> -->
 
-<h1> Detalle de la solicitud </h1>
+<div class="container">
+  <div class="row">
 
-  <div *ngIf="solicitude">
-      <p> <b>Nombre del paciente:</b> {{ solicitude.name  }} </p>
+    <h1> Detalle de la solicitud </h1>
+
+    <div *ngIf="solicitude">
+      <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
       <p> <b>Tipo de sangre:</b> {{ solicitude.bloodType }} </p>
       <p> <b>Fecha de nacimiento:</b> {{ solicitude.birthDate }} </p>
       <p> <b>Cantidad de donantes que necesita:</b> {{ solicitude.amountBlood }} </p>
       <p> <b>Ciudad:</b> {{solicitude.city}} </p>
       <p> <b>Motivo por el que necesita la donación:</b> {{ solicitude.reason }} </p>
-      <a [routerLink]="['/update/', solicitude._id]"> Edit </a>
+      <!-- <a [routerLink]="['/update/', solicitude._id]"> Edit </a> -->
       <button (click)="donate()">Donate</button>
       <button (click)="deleteSolicitude()"> Delete </button>
-  </div>
+    </div>
 
-  <a [routerLink]="['/solicitudes']"> Back to list </a>
+
+
+    <div class="progress">
+      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="80" [ngStyle]='{"width": progress + "%"}'>
+        <span class="sr-only">20% Complete</span>
+      </div>
+    </div>
+
+    <!-- <div  *ngIf="solicitude">
+    <h3 class="title is-5">Location: </h3>
+    <agm-map [latitude]="solicitude.city.latitud" [longitude]="solicitude.city.longitud">
+    <agm-marker [latitude]="solicitude.city.latitud" [longitude]="solicitude.city.longitud"></agm-marker>
+  </agm-map>
+
+</div> -->
+    <!-- <progressbar [animate]="true" [value]="currentValue" [type]="type"><b>{{currentValue}}%</b></progressbar> -->
+
+
+    <!-- <app-maps></app-maps> -->
+
+
+
+    <a [routerLink]="['/solicitudes']"> Back to list </a>
+  </div>
+</div>
