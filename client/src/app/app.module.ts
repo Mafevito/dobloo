@@ -17,13 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { SolicitudeComponent } from './solicitude/solicitude.component';
 import { SolicitudeListComponent } from './solicitude-list/solicitude-list.component';
 import { SolicitudeDetailsComponent } from './solicitude-details/solicitude-details.component';
-import { EditSolicitudeComponent } from './edit-solicitude/edit-solicitude.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MapsComponent } from './maps/maps.component';
 import { ChartsComponent } from './charts/charts.component';
 
-// import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { ChartsModule } from 'ng2-charts';
 import { AgmCoreModule } from "@agm/core";
 import {} from '@types/googlemaps'
@@ -40,7 +38,6 @@ import { FooterComponent } from './footer/footer.component';
     SolicitudeComponent,
     SolicitudeListComponent,
     SolicitudeDetailsComponent,
-    EditSolicitudeComponent,
     UserProfileComponent,
     NavbarComponent,
     MapsComponent,
@@ -59,7 +56,13 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [SessionService, RelationSolicitudeUserService , SolicitudeService, SolicitudesService, ProfileDetailsService],
+  providers: [
+    SessionService,
+    RelationSolicitudeUserService,
+    SolicitudeService,
+    SolicitudesService,
+    ProfileDetailsService
+  ],
   bootstrap: [AppComponent]
 })
 
