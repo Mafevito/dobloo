@@ -62,7 +62,7 @@ export class SessionService {
         this.user = res.json();
         return this.user;
       })
-      .catch(this.handleError);
+      // .catch(this.handleError);
   }
 
   getPrivateData():Observable<object>{

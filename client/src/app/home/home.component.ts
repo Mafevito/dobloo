@@ -13,27 +13,9 @@ import { Observable } from 'rxjs';
 })
 
 export class HomeComponent implements OnInit {
-  solicitude:any;
-  solicitudeId:string;
-  error: string;
-  user:any;
 
-  constructor(
-    private sessionUser : SessionService,
-    private solicitudesService:SolicitudesService,
-    private router: Router,
-    private route: ActivatedRoute
+  constructor() {}
 
-  ) {}
-
-  ngOnInit() {
-    this.sessionUser.isLoggedIn().subscribe( result => this.user = result);
-    this.route.params.subscribe( params => {
-      this.solicitudesService.getDetails(params['id'])
-        .subscribe( solicitude => {
-          this.solicitude = solicitude
-        })
-    })
-  }
+  ngOnInit() {}
 
 }
