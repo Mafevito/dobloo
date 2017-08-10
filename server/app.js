@@ -17,7 +17,7 @@ app.use('/api/solicitude', socilitudRoutes);
 app.use('/api/relation', relationSolicitudeUser);
 
 app.use((req, res, next) => {
-  res.sendfile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 require('./config/error-handler')(app);

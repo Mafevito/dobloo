@@ -27,7 +27,6 @@
       <input type="number" class="form-control" [(ngModel)]="formInfo.amountBlood" name="amountBlood"/>
       <br>
       <label> Ciudad </label>
-      <!-- <input type="text" class="form-control" [(ngModel)]="formInfo.city" name="city"/> -->
       <app-maps (locationEmitter)= "getPosition($event)"></app-maps>
       <br>
       <label> Motivo por el que solicitas sangre.. </label>
