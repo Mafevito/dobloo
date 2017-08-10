@@ -29,7 +29,7 @@ export class SolicitudeDetailsComponent implements OnInit {
   progress = 0;
 
   constructor(
-    private sessionUser : SessionService,
+    public sessionUser : SessionService,
     private solicitudesService:SolicitudesService,
     private relationSolicitudeUserService:RelationSolicitudeUserService,
     private router: Router,

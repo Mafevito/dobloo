@@ -22,7 +22,7 @@ export class SignupFormComponent implements OnInit {
   height: string;
   phoneNumber: string;
 
-  constructor(private session: SessionService, private router: Router) { }
+  constructor(public session: SessionService, private router: Router) { }
 
   ngOnInit() {}
 

@@ -23,7 +23,7 @@ export class UserProfileComponent implements OnInit {
     private relation: RelationSolicitudeUserService,
     private router: Router,
     private route: ActivatedRoute,
-    private session: SessionService
+    public session: SessionService
   ) {}
 
   ngOnInit() {
