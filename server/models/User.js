@@ -13,7 +13,7 @@ const userSchema = new Schema({
   password: String,
   fullName: String,
   bloodType: String,
-  birthDate: String,
+  years: String,
   city: String,
   weight: String,
   height: String,

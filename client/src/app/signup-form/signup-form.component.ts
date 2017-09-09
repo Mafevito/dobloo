@@ -16,7 +16,7 @@ export class SignupFormComponent implements OnInit {
   password: string;
   fullName: string;
   bloodType: string;
-  birthDate: string;
+  years: string;
   city: string;
   weight: string;
   height: string;
@@ -33,7 +33,7 @@ export class SignupFormComponent implements OnInit {
       this.email,
       this.fullName,
       this.bloodType,
-      this.birthDate,
+      this.years,
       this.city,
       this.weight,
       this.height,

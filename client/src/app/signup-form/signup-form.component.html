@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <div class="row">
+  <div class="row container-signup">
     <form>
       <div class="col-md-6 col-md-offset-3">
         <h1> Signup </h1>
@@ -35,8 +35,8 @@
           <option value="AB positivo">AB positivo</option>
         </select>
         <br>
-        <label> Fecha de nacimiento </label><br>
-        <input type="date" class="form-control" [(ngModel)]="birthDate" name="birthDate" />
+        <label> Edad </label><br>
+        <input type="number" class="form-control" [(ngModel)]="years" name="years" />
         <br>
         <label> Ciudad </label><br>
         <input type="text" class="form-control" [(ngModel)]="city" name="city" />
@@ -51,12 +51,15 @@
         <input type="text" class="form-control" [(ngModel)]="phoneNumber" name="phoneNumber" />
         <br>
 
-        <button type="submit" class="signup-btn" (click)="signup()"> Signup </button>
+        <button type="submit" class="signup-btn" (click)="signup()"> Signup <span class="glyphicon glyphicon-send"></span> </button>
         <div class="text-signup">
-          <a [routerLink]="['/login']"> Already has an account, Go to login </a>
+          <a class="si-cuenta" [routerLink]="['/login']"> Already has an account, Go to login </a>
+
         </div>
     </div>
     </form>
     <p class="error"> {{ error }} </p>
   </div>
 </div>
+
+<app-footer></app-footer>

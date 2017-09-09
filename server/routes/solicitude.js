@@ -30,6 +30,7 @@ router.post('/', (req, res, next) => {
   const solicitude = new Solicitude ({
     name: req.body.formInfo.name,
     bloodType: req.body.formInfo.bloodType,
+    years: req.body.formInfo.years,
     amountBlood: req.body.formInfo.amountBlood,
     city: req.body.formInfo.cityPosition,
     reason: req.body.formInfo.reason,

@@ -1,3 +1,6 @@
+ .container-list {
+   margin: 90px 0;
+ }
 .container > .row > h1 {
   margin-bottom: 50px;
 }
@@ -8,8 +11,31 @@
 
 .one-solicitude {
   border: 2px solid #18BC9C;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  text-align: justify;
+  width: 80%;
+  border-radius: 30px;
+}
+
+.btn-list {
+  font-size: 16px;
+  float: right;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.info-solicitude {
+  font-size: 18px;
+  margin-bottom: 40px;
 }
 
 .info-maps {
-  margin: 50px 80px;
+  margin: 30px 0 90px 0;
+}
+
+.info-maps > h2 {
+  margin-bottom: 50px;
 }

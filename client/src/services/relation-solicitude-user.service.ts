@@ -23,4 +23,9 @@ export class RelationSolicitudeUserService {
       .map( res => res.json() )
   }
 
+  getDelete(solicitude) {
+    return this.http.delete(`${this.BASE_URL}/api/solicitude/${solicitude._id}`)
+      .map((res) => res.json());
+  }
+
 }

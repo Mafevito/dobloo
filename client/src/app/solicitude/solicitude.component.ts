@@ -10,7 +10,6 @@ import { SolicitudeDetailsComponent } from '../solicitude-details/solicitude-det
   selector: 'app-solicitude',
   templateUrl: './solicitude.component.html',
   styleUrls: ['./solicitude.component.css'],
-  // directives: [SolicitudeDetailsComponent]
 })
 
 
@@ -18,14 +17,14 @@ export class SolicitudeComponent implements OnInit {
   error: string;
   name: string;
   bloodType: string;
-  birthDate: string;
+  years: string;
   amountBlood: string;
   city: string;
   reason: string;
   formInfo = {
     name: '',
     bloodType:'',
-    birthDate: '',
+    years: '',
     amountBlood: '',
     reason: '',
     cityPosition: {

@@ -8,7 +8,7 @@ const solicitudeSchema = new Schema({
   bloodType: {
     type:String,
   },
-  birthDate: {
+  years: {
     type:String,
   },
   amountBlood:{

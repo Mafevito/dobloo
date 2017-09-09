@@ -1,3 +1,9 @@
 agm-map {
      height: 300px;
+     /*width: 550px;*/
+     text-align: center;
+}
+
+.form-control {
+  /*width: 520px;*/
 }

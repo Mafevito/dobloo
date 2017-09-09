@@ -1,3 +1,7 @@
+.container-signup {
+  margin: 90px 0;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
@@ -57,4 +61,7 @@ h1 {
 
 .signup-btn:hover {
   font-size: 20px;
+}
+.si-cuenta {
+  float: right;
 }

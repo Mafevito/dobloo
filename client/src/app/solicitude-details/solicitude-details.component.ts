@@ -58,9 +58,9 @@ export class SolicitudeDetailsComponent implements OnInit {
 
 /* Relation SolicitudeUser*/
   donate() {
-    console.log(this.user._id);
-    console.log(`nombre del solicitante => ${this.solicitude.name}`);
-    console.log(this.solicitude._id)
+    // console.log(this.user._id);
+    // console.log(`nombre del solicitante => ${this.solicitude.name}`);
+    // console.log(this.solicitude._id)
     this.relationForm.userId = this.user._id;
     this.relationForm.solicitudeId = this.solicitude._id;
     this.relationSolicitudeUserService.solicitudeUserRelation(this.relationForm)

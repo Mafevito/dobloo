@@ -1,29 +1,38 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <div class="row">
+  <div class="row container-detail">
 
     <h1> Detalle de la solicitud </h1>
 
     <div *ngIf="solicitude">
-      <p> <b>Nombre del paciente:</b> {{ solicitude.name }} </p>
-      <p> <b>Tipo de sangre:</b> {{ solicitude.bloodType }} </p>
-      <p> <b>Fecha de nacimiento:</b> {{ solicitude.birthDate | date:dd/MM/yyy }} </p>
-      <p> <b>Cantidad de donantes que necesita:</b> {{ solicitude.amountBlood }} </p>
-      <p> <b>Ciudad:</b> {{solicitude.city}} </p>
-      <p> <b>Motivo por el que necesita la donación:</b> {{ solicitude.reason }} </p>
-
-      <button (click)="donate()">Donate</button>
-      <button (click)="deleteSolicitude()"> Delete </button>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="80" [ngStyle]='{"width": progress + "%"}'>
+      <div class="header-solicitude">
+        <p> Nombre del paciente: {{ solicitude.name }} </p>
       </div>
+      <div class="solicitude-detail">
+      <p><span class="glyphicon glyphicon-tint"></span> <b>Tipo de sangre: </b> {{ solicitude.bloodType }} </p>
+      <p><span class="glyphicon glyphicon-triangle-right"></span> <b>Edad: </b> {{ solicitude.years }} </p>
+      <p><span class="glyphicon glyphicon-plus"></span> <b>Cantidad de donantes que necesita: </b> {{ solicitude.amountBlood }} </p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> <b>Hospital donde quiere que se haga la donación: </b> {{ solicitude.cityPosition }} Hospital Maria del Carmen </p>
+      <p><span class="glyphicon glyphicon-ok-sign"></span> <b>Motivo por el que solicita la donación: </b> {{ solicitude.reason }} </p>
+
+      <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="80" [ngStyle]='{"width": progress + "%"}'>
+        </div>
+      </div>
+      <div class="btns">
+      <button class="btn-donate" (click)="donate()">Donate</button>
+      <button class="btn-delate" (click)="deleteSolicitude()"> Delete </button>
+    </div>
+  </div>
+  </div>
+
+    <div class="map">
+      <app-maps></app-maps>
     </div>
 
-    <app-maps></app-maps>
-
-    <a [routerLink]="['/solicitudes']"> Back to list </a>
+    <a class="back-list" [routerLink]="['/solicitudes']"> <span class="glyphicon glyphicon-chevron-left"></span> Back to list </a>
   </div>
 </div>
+
+<app-footer></app-footer>

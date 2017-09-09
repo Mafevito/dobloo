@@ -1,13 +1,15 @@
 <app-navbar></app-navbar>
 
 <div class="container">
-  <div class="row">
+  <div class="row container-profile">
     <h1> Profile </h1>
 
     <div *ngIf="user">
-      <p> <b>Full Name:</b> {{ user.fullName }} </p>
-      <p> <b>Username:</b> @{{ user.username }} </p>
-      <p> <b>City:</b> {{ user.city }} </p>
+      <div class="caption info-solicitude">
+      <p> <span class="glyphicon glyphicon-user"></span> <b>Full Name:</b> {{ user.fullName }} </p>
+      <p> <span class="glyphicon glyphicon-triangle-right"></span><b>Username:</b> @{{ user.username }} </p>
+      <p> <span class="glyphicon glyphicon-map-marker"></span><b>City:</b> {{ user.city }} </p>
+    </div>
     </div>
 
     <h4> Personas a las que he ayudado: </h4>
@@ -15,11 +17,12 @@
       <div *ngFor="let donation of donations">
         <div class="col-md-6 all-solicitudes">
           <div class="thumbnail one-solicitude">
-            <div class="caption info-solicitude">
+            <div class="caption info-solicitud">
               <li *ngIf="donation.solicitudId.name">Name: {{ donation.solicitudId.name }}</li>
               <li *ngIf="donation.solicitudId.bloodType">Blood type: {{ donation.solicitudId.bloodType }}</li>
               <li *ngIf="donation.solicitudId.amountBlood">Amount: {{ donation.solicitudId.amountBlood }}</li>
               <li *ngIf="donation.solicitudId.reason">Reason: {{ donation.solicitudId.reason }}</li>
+              <button class="btn-delate" (click)="deleteSolicitude()"> Cancel </button>
             </div>
           </div>
         </div>
@@ -27,3 +30,5 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

@@ -15,12 +15,15 @@ import { Observable } from 'rxjs';
 })
 
 export class UserProfileComponent implements OnInit {
+  error: any;
   user: any;
   donations: any;
+  dontation: any
 
   constructor(
     private profile:ProfileDetailsService,
     private relation: RelationSolicitudeUserService,
+    private solicitudesService:SolicitudesService,
     private router: Router,
     private route: ActivatedRoute,
     public session: SessionService
@@ -31,8 +34,18 @@ export class UserProfileComponent implements OnInit {
       this.user = user
       this.relation.getUserDonations(user).subscribe( donations => {
         this.donations = donations
+        console.log(donations)
       })
     });
   }
+
+  // deleteSolicitude() {
+  //   console.log("deberia borrarse");
+  //   this.relation.getDelete(this.donations)
+  //   .subscribe(
+  //     (donations) => this.router.navigate(['/profile']),
+  //     (err) => this.error = err
+  //   );
+  // }
 
 }
